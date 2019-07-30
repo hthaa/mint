@@ -6,12 +6,11 @@
 #'
 #'
 #'
-#' @param
 #'
-#' @example
+#'
+#' @examples
 #'
 #' @export
-
 mint <- function(meas.model, group, data, fitmeas = FALSE){
 
  library(lavaan)
