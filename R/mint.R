@@ -44,21 +44,21 @@ mint <- function(meas.model, group, data, fitmeas = FALSE){
  library(lavaan)
 
  #equal form
- eqform <- sem(meas.model, bfi, group = "gender")
+ eqform <- sem(meas.model, group, data)
  eqform.fit <- fitMeasures(eqform, c("chisq", "df", "pvalue", "aic", "bic"))
  eqform.fit2 <- fitMeasures(eqform, c("chisq", "df", "pvalue", "rmsea", "cfi", "tli"))
 
  #equal loadings
- eqload <- sem(meas.model, bfi, group = "gender", group.equal = c("loadings"))
+ eqload <- sem(meas.model, group, data, group.equal = c("loadings"))
  eqload.fit <- fitMeasures(eqload, c("chisq", "df", "pvalue", "rmsea", "cfi", "tli"))
  #equal intercepts
- eqint <- sem(meas.model, bfi, group = "gender", group.equal = c("loadings", "intercepts"))
+ eqint <- sem(meas.model, group, data, group.equal = c("loadings", "intercepts"))
  eqint.fit <- fitMeasures(eqint, c("chisq", "df", "pvalue", "rmsea", "cfi", "tli"))
  #equal error variance
- eqerrvar <- sem(meas.model, bfi, group = "gender", group.equal = c("loadings", "intercepts", "residuals"))
+ eqerrvar <- sem(meas.model, group, data, group.equal = c("loadings", "intercepts", "residuals"))
  eqerrvar.fit <- fitMeasures(eqerrvar, c("chisq", "df", "pvalue", "rmsea", "cfi", "tli"))
  #equal factor means
- eqfmeans <- sem(meas.model, bfi, group = "gender", group.equal = c("loadings", "intercepts", "residuals", "means"))
+ eqfmeans <- sem(meas.model, group, data, group.equal = c("loadings", "intercepts", "residuals", "means"))
  eqfmeans.fit <- fitMeasures(eqfmeans, c("chisq", "df", "pvalue", "rmsea", "cfi", "tli"))
 
  #comparisons
