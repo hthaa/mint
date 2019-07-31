@@ -7,8 +7,39 @@
 mint(meas.model, group, data, fitmeas = FALSE)
 }
 \description{
-This packages compares the groups based on the measurement model
+mint examines across-groups equivalence of confirmatory factor
+analysis (CFA) measurement model parameters as well as testing
+the equality of factor means among groups. The sequence of
+measurement invariance followed by mint is:
+1) Equal form/configural invariance solution has the same form/
+structure with the same indicators loading on the latent variables
+for each group.
+2) Equal loadings/weak invariance solution constrains the loadings
+to be equal for each group.
+3) Equal intercepts/strong invariance solution constrains the intercepts
+(+ loadings) to be equal for each group.
+4) Equal error variances/strict invariance solution constrains the error
+variances (+ loadings and intercepts) to be equal for each group.
+5) Equal factor means solution constrains the latent means (+ loadings
+intercepts, and error variances) to be equal for each group.
+}
+\details{
+If the Chi-square difference test prøves to be significant, the equality of
+the tested parameter is not established for the specified model.
+
+For the examples, we use the following model:
+library(psych)
+data(bfi, package = "psych")
+library(lavaan)
+PERS.model <- '
+Agree =~ A1 + A2 + A3 + A4 + A5
+Consc =~ C1 + C2 + C3 + C4 + C5
+Extra =~ E1 + E2 + E3 + E4 + E5
+Neuro =~ N1 + N2 + N3 + N4 + N5
+Openn =~ O1 + O2 + O3 + O4 + O5
 }
 \examples{
-
+mint(meas.model=PERS.model, group=gender, data=bfi)
+mint(meas.model=PERS.model, group=gender, data=bfi, fitmeas = FALSE)
+mint(meas.model=PERS.model, group=gender, data=bfi, fitmeas = TRUE)
 }
