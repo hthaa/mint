@@ -4,7 +4,7 @@
 \alias{mint}
 \title{Measurement invariance test}
 \usage{
-mint(meas.model, group, data, fitmeas = FALSE)
+mint(meas.model, dataset, gvar, fitmeas = FALSE)
 }
 \description{
 mint examines across-groups equivalence of confirmatory factor
