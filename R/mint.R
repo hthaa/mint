@@ -35,9 +35,9 @@
 #' Neuro =~ N1 + N2 + N3 + N4 + N5
 #' Openn =~ O1 + O2 + O3 + O4 + O5
 #' @examples
-#' mint(meas.model=PERS.model, group=gender, data=bfi)
-#' mint(meas.model=PERS.model, group=gender, data=bfi, fitmeas = FALSE)
-#' mint(meas.model=PERS.model, group=gender, data=bfi, fitmeas = TRUE)
+#' mint(meas.model=PERS.model, gvar="gender", dataset=bfi)
+#' mint(meas.model=PERS.model, gvar="gender", dataset=bfi, fitmeas = FALSE)
+#' mint(meas.model=PERS.model, gvar="gender", dataset=bfi, fitmeas = TRUE)
 #' @export
 mint <- function(meas.model, dataset, gvar, fitmeas = FALSE){
 
